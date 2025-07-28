@@ -15,27 +15,23 @@ public class DataHelper {
     private DataHelper() {
     }
 
-    public static VerificationCode getVerificationCode() {
-        return new VerificationCode("12345");
-    }
-
     public static AuthInfo getAuthInfoWithTestData() {
         return new AuthInfo("vasya", "qwerty123");
     }
 
-    private static String getRandomLogin(){
+    private static String getRandomLogin() {
         return FAKER.name().username();
     }
 
-    private static String getRandomPassword(){
+    private static String getRandomPassword() {
         return FAKER.internet().password();
     }
 
-    public static AuthInfo generateRandomUser(){
+    public static AuthInfo generateRandomUser() {
         return new AuthInfo(getRandomLogin(), getRandomPassword());
     }
 
-    public static VerificationCode generateRandomVerificationCode(){
+    public static VerificationCode generateRandomVerificationCode() {
         return new VerificationCode(FAKER.numerify("######"));
     }
 
@@ -48,7 +44,7 @@ public class DataHelper {
     @Data
     @NoArgsConstructor
     @AllArgsConstructor
-    public static class VerificationCode{
+    public static class VerificationCode {
         String code;
     }
 
